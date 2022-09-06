@@ -14,7 +14,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '338de15dd4a96cb37bf1d2ca660726f28423017b9a54893ea150cc0b801820ea3b3ad41288166bb659789ff5ac451f1a506551348b4810cdc1803a2988f0f46c'
+  # config.secret_key = '338de15dd4a96cb37bf1d2ca660726f28423017b9a54893ea150cc0b801820
+  #                      ea3b3ad41288166bb659789ff5ac451f1a506551348b4810cdc1803a2988f0f46c'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -46,7 +47,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+  config.authentication_keys = [:login]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -126,7 +127,8 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '4b5cf1345f97e1447e785a0db300a2617e26f43b6c9ee0b9ace246e109fc1fd217b2b3aab87385be4f3524150249726a24c1d71a779e3debecbfa0ffcbaef7e9'
+  # config.pepper = '4b5cf1345f97e1447e785a0db300a2617e26f43b6c9ee0b9ace246e109fc1fd217b2b3aab87
+  #                  385be4f3524150249726a24c1d71a779e3debecbfa0ffcbaef7e9'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -178,7 +180,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
