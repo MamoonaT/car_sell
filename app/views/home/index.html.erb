@@ -1,43 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<%= link_to "Home" %><br>
-<%= link_to "Favourites" %><br>
-<%= link_to "My Posts" %><br>
-<%= link_to "Post Add" %><br>
-<% if user_signed_in? %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete, redirect_to: new_user_session_path %>
-<% else %>
-<%= link_to "sign_in", new_user_session_path %><br>
-
-<br>
-<% end %>
-
-<h1>find cars</h1>
- 
-<div class="dropdown">
-		<li><a class="dropdown-item" href="#">Car Make/Models</a></li>
-		<li><a class="dropdown-item" href="#">City</a></li>
-		<li><a class="dropdown-item" href="#">Price Range</a></li><br>
-</div>
-
-<h1>find used cars</h1>
-
-<div class="row row-cols-4">
-	<div class="dropdown">
-		<li><a class="dropdown-item" href="#">Car Make/Models</a></li>
-		<li><a class="dropdown-item" href="#">City</a></li>
-		<li><a class="dropdown-item" href="#">Price Range</a></li><br>
-		<li><a class="dropdown-item" href="#">Engine Details</a></li>
-		<li><a class="dropdown-item" href="#">Trasnsmission Type</a></li>
-		<li><a class="dropdown-item" href="#">Color</a></li><br>
-		<li><a class="dropdown-item" href="#">Milage</a></li>
-		<li><a class="dropdown-item" href="#">Engine Capacity</a></li>
-		<li><a class="dropdown-item" href="#">Assembly Type</a></li><br>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Favourites</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">My Posts</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="#">Post Add</a>
+      </li>
+			<li class="nav-item">
+			<% if user_signed_in? %>
+				<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <% else %>
+				<%= link_to "Sign_In", new_user_session_path, class: "nav-link" %>
+			<% end %>
+			</li>			
+		</ul>
 	</div>
+</nav>
+
+
+<div class="container-fluid w-100 h-100 mt-5 p-4 text-center border bg-light ">
+	Find Cars
+<div class="dropdown show">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="Car Make/Model" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Car Make/Model 
+ 	</button>
+  <div class="dropdown-menu" aria-labelledby="Car Make/Model">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>	
+
+
 </div>
-
-
-<% if user_signed_in? %>
-<%= link_to "sign_out", destroy_user_session_path, method: :delete, redirect_to: new_user_session_path %>
-<% else %>
-<%= link_to "sign_in", new_user_session_path %>
-<% end %>

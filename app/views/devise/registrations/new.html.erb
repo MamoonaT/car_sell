@@ -1,51 +1,48 @@
-<div class="p-3 mb-2 bg-info text-dark">
-<div class="text-center">
-<div class="p-3 mb-2 bg-white text-dark">
+<%# <div class="bg-info"> %>
+  <div class="container-fluid w-25 border rounded shadow mt-5 p-4 text-center border bg-light ">
+    <div class="field mb-3 text-start">
+        <h2>Sign up</h2>
 
-  <h2>Sign up</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div>
-          <%= f.label :username %><br />
-          <%= f.text_field :username, autofocus: true %>
-      </div>
-
-      <div>
-        <%= f.label :phone_number %><br />
-        <%= f.text_field :phone_number %>
-      </div>
-
-      <div>
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autocomplete: "email" %>
-      </div>
-
-      <div>
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-        <div class="form-text">
-        Your password must be 8-20 characters long with at least one capital letter and a special character.
+        <div>
+          <br>
+          <%= f.text_field :username, :placeholder => "Username" %>
         </div>
-      </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br>
-        <br>
-      </div>
+        <div>
+          <br>
+          <%= f.text_field :phone_number, :placeholder => "03xx-xxxxxxx" %>
+        </div>
+
+        <div>
+          <br>
+          <%= f.email_field :email, :placeholder => "your-email@address.com" %>
+        </div>
+
+        <div>
+          <% if @minimum_password_length %>
+          <% end %><br />
+          <%= f.password_field :password, :placeholder => "enter your secret password here" %>
+          <div class="form-text">
+          Your password must be 8-20 characters long with at least one capital letter and a special character.
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, :placeholder => "Please confirm the password" %><br>
+          <br>
+        </div>
 
         <div class="actions">
           <%= f.submit "Create" %>
         </div>
 
       <% end %>
-
+    
+    <br>
     <p>Have an account? login here <%= render "devise/shared/links" %></p>
-
-  </form>
   </div>
-</div>
+  </div>
+ <%# </div>  %>
