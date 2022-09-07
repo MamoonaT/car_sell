@@ -1,0 +1,151 @@
+<div class="container-fluid w-100 h-100 mt-5 p-4 text-right border bg-light ">
+	Find Cars
+	<div class="container text-center">
+		<div class="row align-items-start">
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Car Make/Model
+							</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Suzuki</a></li>
+									<li><a class="dropdown-item" href="#">Toyota</a></li>
+									<li><a class="dropdown-item" href="#">Mehran</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>	
+
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								All cities
+						</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Lahore</a></li>
+									<li><a class="dropdown-item" href="#">Karachi</a></li>
+									<li><a class="dropdown-item" href="#">Islamabad</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>	
+
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Price Range
+						</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">2lac-4lac</a></li>
+									<li><a class="dropdown-item" href="#">5lac-10lac</a></li>
+									<li><a class="dropdown-item" href="#">10lac-15lac</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>
+		</div>
+
+	<% if filters %>
+		<div class="row align-items-start">
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Car Make/Model
+							</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Suzuki</a></li>
+									<li><a class="dropdown-item" href="#">Toyota</a></li>
+									<li><a class="dropdown-item" href="#">Mehran</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>	
+
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								All cities
+						</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Lahore</a></li>
+									<li><a class="dropdown-item" href="#">Karachi</a></li>
+									<li><a class="dropdown-item" href="#">Islamabad</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>	
+
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Price Range
+						</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">2lac-4lac</a></li>
+									<li><a class="dropdown-item" href="#">5lac-10lac</a></li>
+									<li><a class="dropdown-item" href="#">10lac-15lac</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>
+		</div>
+
+
+		<div class="row align-items-start">
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Car Make/Model
+							</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Suzuki</a></li>
+									<li><a class="dropdown-item" href="#">Toyota</a></li>
+									<li><a class="dropdown-item" href="#">Mehran</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>	
+
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								All cities
+						</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Lahore</a></li>
+									<li><a class="dropdown-item" href="#">Karachi</a></li>
+									<li><a class="dropdown-item" href="#">Islamabad</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>	
+
+				<div class="col-sm">
+					<div class="dropdown show">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Price Range
+						</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">2lac-4lac</a></li>
+									<li><a class="dropdown-item" href="#">5lac-10lac</a></li>
+									<li><a class="dropdown-item" href="#">10lac-15lac</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>
+		</div>
+	<% end %>
+
+	<div>
+		<%= link_to 'more search options', home_new_path(filters: !filters), remote: true %>
+	</div>
+</div>

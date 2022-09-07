@@ -2,5 +2,11 @@
 
 # homecontroller
 class HomeController < ApplicationController
-  def index; end
+  def index
+    @filters = false
+  end
+
+  def new
+    @filters = ActiveModel::Type::Boolean.new.cast(params[:filters])
+  end
 end
