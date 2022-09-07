@@ -1,9 +1,43 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<%= link_to "Home" %><br>
+<%= link_to "Favourites" %><br>
+<%= link_to "My Posts" %><br>
+<%= link_to "Post Add" %><br>
+<% if user_signed_in? %>
+<%= link_to "Logout", destroy_user_session_path, method: :delete, redirect_to: new_user_session_path %>
+<% else %>
+<%= link_to "sign_in", new_user_session_path %><br>
+
+<br>
+<% end %>
+
+<h1>find cars</h1>
  
+<div class="dropdown">
+		<li><a class="dropdown-item" href="#">Car Make/Models</a></li>
+		<li><a class="dropdown-item" href="#">City</a></li>
+		<li><a class="dropdown-item" href="#">Price Range</a></li><br>
+</div>
+
+<h1>find used cars</h1>
+
+<div class="row row-cols-4">
+	<div class="dropdown">
+		<li><a class="dropdown-item" href="#">Car Make/Models</a></li>
+		<li><a class="dropdown-item" href="#">City</a></li>
+		<li><a class="dropdown-item" href="#">Price Range</a></li><br>
+		<li><a class="dropdown-item" href="#">Engine Details</a></li>
+		<li><a class="dropdown-item" href="#">Trasnsmission Type</a></li>
+		<li><a class="dropdown-item" href="#">Color</a></li><br>
+		<li><a class="dropdown-item" href="#">Milage</a></li>
+		<li><a class="dropdown-item" href="#">Engine Capacity</a></li>
+		<li><a class="dropdown-item" href="#">Assembly Type</a></li><br>
+	</div>
+</div>
+
 
 <% if user_signed_in? %>
-<%= link_to "sign_out", destroy_user_session_path, method: :delete %>
+<%= link_to "sign_out", destroy_user_session_path, method: :delete, redirect_to: new_user_session_path %>
 <% else %>
 <%= link_to "sign_in", new_user_session_path %>
 <% end %>
