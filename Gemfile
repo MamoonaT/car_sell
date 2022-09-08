@@ -11,6 +11,7 @@ gem 'rubocop-rails'
 gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
 gem 'jquery-rails'
+gem 'phonelib'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
@@ -57,6 +58,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
 end
 
 group :test do

@@ -1,4 +1,4 @@
-<%= render 'layouts/header' %>
+<%= render "layouts/header" if current_user.present? %>
 <div id='search-filters'>
 	<%= render 'layouts/search', filters: @filters %>
 </div>
