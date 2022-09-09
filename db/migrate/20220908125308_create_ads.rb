@@ -11,6 +11,7 @@ class CreateAds < ActiveRecord::Migration[5.2]
       t.string :engine_capacity
       t.string :color
       t.string :add_description
+      t.integer :user_id
 
       t.timestamps
     end

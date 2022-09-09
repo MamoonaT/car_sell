@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
 
 	def index
-    @ads = ad.order("created_at DESC")
+    @ads = Ad.order("created_at DESC")
   end
 
 	def new
@@ -10,10 +10,10 @@ class AdsController < ApplicationController
 
 	def create
 		@ad = Ad.new(ad_params)
-		if @ad.save
+		if @ad.save	
       redirect_to @ad
     else
-      render 'ads_path'
+      render 'new'
     end
 	end
 

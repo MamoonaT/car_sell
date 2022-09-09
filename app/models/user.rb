@@ -12,6 +12,7 @@ class User < ApplicationRecord
     message: '(minimum 8 characters are required with at least one capital letter and a special character)'
   }
   validates :phone_number, phone: { possible: true, allow_blank: true }
+  # has_many :ads
 
   attr_writer :login
 

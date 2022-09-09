@@ -8,12 +8,10 @@
         <a class="nav-link" href="#">Favourites</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
         <%= link_to "Post Ad", new_ad_path, class: "nav-link" %>
-        </a>
       </li>
-			<li class="nav-item">
-        <a class="nav-link" href="#">Post Add</a>
+			<li class="nav-item" href="#">
+        <%= link_to "My Posts", class: "nav-link" %>
       </li>
 			<li class="nav-item">
 			<% if user_signed_in? %>
