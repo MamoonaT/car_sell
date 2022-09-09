@@ -12,6 +12,7 @@ gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
 gem 'jquery-rails'
 gem 'phonelib'
+gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'

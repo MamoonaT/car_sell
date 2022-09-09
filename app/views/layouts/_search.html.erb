@@ -16,7 +16,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="col-sm">
 						<div class="dropdown show">
 							<div class="dropdown">
@@ -31,7 +30,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="col-sm">
 						<div class="dropdown show">
 							<div class="dropdown">
@@ -48,10 +46,8 @@
 					</div>
 				</div>
 			</div>
-
-
 		<% if filters %>
-				<div class="container text-center">
+			<div class="container text-center">
 					<div class="row mt-3 align-items-start">
 						<div class="col-sm">
 							<div class="dropdown show">
@@ -66,39 +62,36 @@
 									</ul>
 								</div>
 							</div>
-						</div>
-
-							<div class="col-sm">
-								<div class="dropdown show">
-									<div class="dropdown">
-										<button class="border" class="btn btn-secondary dropdown-toggle" style="width: 50%;" type="button" data-bs-toggle="dropdown">
-											Transmission Type
-									</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="#">Lahore</a></li>
-												<li><a class="dropdown-item" href="#">Karachi</a></li>
-												<li><a class="dropdown-item" href="#">Islamabad</a></li>
-											</ul>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-sm">
-								<div class="dropdown show">
-									<div class="dropdown">
-										<button class="border" class="btn btn-secondary dropdown-toggle" style="width: 50%;" type="button" data-bs-toggle="dropdown">
-											Color
-									</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="#">2lac-4lac</a></li>
-												<li><a class="dropdown-item" href="#">5lac-10lac</a></li>
-												<li><a class="dropdown-item" href="#">10lac-15lac</a></li>
-											</ul>
-									</div>
-								</div>
-							</div>
 					</div>
-				</div>
+					<div class="col-sm">
+							<div class="dropdown show">
+								<div class="dropdown">
+									<button class="border" class="btn btn-secondary dropdown-toggle" style="width: 50%;" type="button" data-bs-toggle="dropdown">
+										Transmission Type
+								</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Lahore</a></li>
+										<li><a class="dropdown-item" href="#">Karachi</a></li>
+										<li><a class="dropdown-item" href="#">Islamabad</a></li>
+									</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="dropdown show">
+							<div class="dropdown">
+								<button class="border" class="btn btn-secondary dropdown-toggle" style="width: 50%;" type="button" data-bs-toggle="dropdown">
+									Color
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">2lac-4lac</a></li>
+									<li><a class="dropdown-item" href="#">5lac-10lac</a></li>
+									<li><a class="dropdown-item" href="#">10lac-15lac</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
 
 				<div class="container text-center">
 					<div class="row mt-3 align-items-start">
@@ -138,22 +131,21 @@
 									<button class="border" class="btn btn-secondary dropdown-toggle" style="width: 50%;" type="button" data-bs-toggle="dropdown">
 										Engine Capacity
 								</button>
-										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" href="#">2lac-4lac</a></li>
-											<li><a class="dropdown-item" href="#">5lac-10lac</a></li>
-											<li><a class="dropdown-item" href="#">10lac-15lac</a></li>
-										</ul>
-								</div>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">2lac-4lac</a></li>
+										<li><a class="dropdown-item" href="#">5lac-10lac</a></li>
+										<li><a class="dropdown-item" href="#">10lac-15lac</a></li>
+									</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-			<% end %>
+			</div>
+		<% end %>
 
 		<div class="container text-center">
 			<div class="row align-items-start">
 				<div class="col-sm">
-
 					<div class="d-grid gap-2 d-md-flex mt-3 justify-content-md-start">
 						<button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
 						<%= link_to "#{filters ?	 "Less Search Options" : "More Search Options"}", home_new_path(filters: !filters), remote: true %>
@@ -163,10 +155,8 @@
 							<button type="button" class="border">CLEAR FILTER</button>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-
-	</div>
+		
 </div>
