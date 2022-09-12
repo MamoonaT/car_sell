@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/new'
   resources :ads
+  resources :ad_steps 
 end

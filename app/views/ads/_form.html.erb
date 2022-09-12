@@ -3,22 +3,22 @@
 		<div class="progress" style="height: 1px;">
 			<div class="progress-bar" role="progressbar" aria-label="Progress" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
-		<button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-		<button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-		<button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
+      <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
+      <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
+      <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
 	</div>
 	
   <%= form_for @ad do |f| %>
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <%= f.label :City %>
-          <%= f.select :city, options_for_select([['Lahore', 'lahore'],['Karachi', 'karachi'],['Islamabad', 'islamabad']]), {include_blank: true}%>
+         <%= f.label :City %>
+          <%= f.select :city, options_for_select([['Lahore', 'lahore'],['Karachi', 'karachi'],['Islamabad', 'islamabad'],['Quette', 'quetta'],['Peshawar', 'peshawar'],['Rawalpindi', 'rawalpindi']]), {include_blank: true}%>
           <br>
         </div>
         <div class="col">
             <%= f.label :Milage %>
-            <%= f.text_field :milage %><br>
+            <%= f.text_field :milage, placeholder: 'in km/h' %><br>
             <br>
           </div>
         </div>
@@ -26,13 +26,13 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <%= f.label :Car_Make %>
-          <%= f.text_field :car_make %>
+          <%= f.label :'Car_Make/Model' %>
+          <%= f.select :car_make, options_for_select([['Honda', 'honda'],['Suzuki', 'suzuki'],['Toyota', 'toyata'],['Tesla', 'tesla']]), {include_blank: true} %>
           <br>
         </div>
         <div class="col">
-          <%= f.label :Engine_Capacity %>
-          <%= f.text_field :engine_capacity %><br>
+          <%= f.label :Transmission_Type %>
+          <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]), {include_blank: true} %><br>
           <br>
         </div>
       </div>
@@ -41,18 +41,23 @@
       <div class="row">
         <div class="col">
           <%= f.label :Price %>
-          <%= f.text_field :price %><br>
+          <%= f.text_field :price, placeholder: 'should be entered in PKR' %><br>
           <br>
         </div>
       <div class="col">
-        <%= f.label :Transmission_Type %>
-        <%= f.text_field :transmission_type %><br>
+        <%= f.label :Engine_Type %>
+        <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%><br>
         <br>
       </div>
+    </div>
+    <div class = col-6 >
+        <%= f.label :Color %>
+        <%= f.select :color, options_for_select([['White', 'white'],['Blue', 'blue'],['Black', 'black'],['Grey', 'grey'],['Silver', 'silver']]), {include_blank: true}%>
+
     </div>
     <%= f.label :Add_description %><br>
     <%= f.text_field :add_description %><br>
     <br>
-    <%= f.submit %>
+    <%= f.submit "Next" %>
   <% end %> 
 </div>

@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(version: 2022_09_09_075340) do
     t.string "milage"
     t.string "transmission_type"
     t.string "assembly_type"
-    t.string "engine_capacity"
+    t.string "engine_type"
     t.string "color"
     t.string "add_description"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "primary_contact"
+    t.string "secondary_contact"
   end
 
   create_table "users", force: :cascade do |t|
