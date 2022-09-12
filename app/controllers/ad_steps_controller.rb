@@ -14,15 +14,17 @@ class AdStepsController < ApplicationController
     when :contact
       @ad.update(image_params)
     end
-    if params[:id] == 'wicked_finish'
-      @ad.update(contact_params)
-      render "wicked_finish", notice: "Thanks for posting an AD."
+    if @ad.update(contact_params)
+      render "finish_wizard_path", notice: "Thanks for posting an AD."
     else
       render_wizard
     end
   end
 
-  def wicked_finish; end
+  def finish_wizard_path
+    ads_path
+  end
+
 
   private
   
@@ -32,11 +34,11 @@ class AdStepsController < ApplicationController
   end
 
   def detail_params
-    params.require(:ad).permit(:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type, :engine_capacity, :add_discription, :assembly_type, :primary_contact, :secondary_contact)
+    params.require(:ad).permit(:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type, :engine_capacity, :add_discription, :assembly_type)
   end
 
   def image_params
-    params.require(:ad).permit(pictures: [])
+    params.require(:ad).permit(image: [])
   end
 
   def contact_params

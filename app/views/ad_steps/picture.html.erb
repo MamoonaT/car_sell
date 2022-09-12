@@ -2,29 +2,16 @@
 	<%= f.hidden_field :ad_id, value: @ad.id %>
 	<div class="form_group">
 		<% if @ad.images.attached? %>
-			<%= image_tag ad.image %>
+			<%= image_tag(@ad.image) %>
 		<% end %>
    <body>
       <input type='file' onchange="readURL(this);" id= "image_id" multiple />
       <img id="img_prev" />
+			    <%= link_to 'Remove image', image.purge %>
     </body>
 	</div>
 		<%= link_to "Next", next_wizard_path %>
 		<%= link_to "Previous", ad_steps_path %>
+
+
 <% end %>
-
-<script>
-	function readURL(input) {
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
-
-			reader.onload = function (e) {
-				$('#img_prev')
-					.attr('src', e.target.result)
-
-			};
-
-			reader.readAsDataURL(input.files[0]);
-		}
-	}
-</script>

@@ -12,22 +12,56 @@
 				<br>
 			</div>
 		</div>
-	</div>
-			<p>Milage</p>
-			<%= @ad.milage %>
-			<br>
-			<p>Engine Type </p>
-			<%= @ad.engine_capacity %>
-			<br>    
-			<p>Transmission Type</p>
-			<%= @ad.transmission_type %>
-			<br>
-			<p>Assembly Type </p>
-			<%= @ad.assembly_type %>
-			<br>
-			<p>Color</p>
-			<%= @ad.color %>
-			<br>       
+		<div class="row">
+			<div class="col">
+				<p> Milage </p>
+				<%= @ad.milage %>
+				<br>
+			</div>
+			<div class="col">
+				<p>Engine_Type </p>
+				<%= @ad.engine_type%>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<p> Transmission_Type </p>
+				<%= @ad.transmission_type %>
+				<br>
+			</div>
+			<div class="col">
+				<p>Color </p>
+				<%= @ad.color%>
+				<br>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col">
+				<p> Transmission_Type </p>
+				<%= @ad.transmission_type %>
+				<br>
+			</div>
+			<div class="col">
+				<p>Image </p>
+				<%= @ad.images%>
+				<br>
+			</div>
+		</div>    
+
+		<div class="row">
+			<div class="col">
+				<p> Primary_Contact </p>
+				<%= @ad.primary_contact %>
+				<br>
+			</div>
+			<div class="col">
+				<p>Secondary_Contact </p>
+				<%= @ad.secondary_contact%>
+				<br>
+			</div>
+		</div>   
 			<%= link_to 'Home', root_path %> 
 </div>
 
