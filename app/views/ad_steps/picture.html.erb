@@ -1,14 +1,9 @@
 <%= form_for @ad, url: next_wizard_path do |f| %>
 	<%= f.hidden_field :ad_id, value: @ad.id %>
-	<div class="form_group">
+	<%= f.file_field :images, onchange:"readURL(this);", class: "form-control", multiple: true %>
+  <img id="img_prev" />
 
-   <body>
-      <input type='file' onchange="readURL(this);" id= "image_id" multiple />
-      <img id="img_prev" />
-    </body>
-		<% if @ad.images.attached? %>
-			<%= image_tag(@ad.images) %>
-		<% end %>
+
 	</div>
 		<%= f.submit "Next" %>
 		<%= link_to "Previous", ad_steps_path %>

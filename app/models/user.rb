@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# class user
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -13,6 +10,7 @@ class User < ApplicationRecord
   }
   validates :phone_number, phone: { possible: true, allow_blank: true }
   # has_many :ads
+  has_many :favourites
 
   attr_writer :login
 

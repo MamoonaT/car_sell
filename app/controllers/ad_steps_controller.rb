@@ -29,9 +29,17 @@ class AdStepsController < ApplicationController
   private
   
   def find_ad
-    @ad = Ad.find_by(id: params[:ad].present? ? params[:ad][:ad_id] : params[:ad_id])
     @ad = Ad.new if @ad.blank?
+    if ad_id.present?
+      @ad = Ad.find_by(id: ad_id)
+    else
+      @ad = Ad.new
+    end
   end
+
+  def ad_id
+    params[:ad].present? ? params[:ad][:ad_id] : params[:ad_id]
+  end 
 
   def details_params
     params.require(:ad).permit(:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type, :engine_capacity, :add_discription, :assembly_type )
@@ -43,7 +51,7 @@ class AdStepsController < ApplicationController
 
   def contact_params
     permitted_params = params.require(:ad).permit(:primary_contact, :secondary_contact)
-    # permitted_params.merge!(user_id: current_user.id)
+    permitted_params.merge!(user_id: current_user.id)
   end
 
 end

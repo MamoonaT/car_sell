@@ -44,7 +44,7 @@
 			</div>
 			<div class="col">
 				<p>Image:</p>
-				<%= @ad.images %>
+				<%= image_tag @ad.images.first, style: "width: 300px;height: 200px" if  @ad.images.attached? %>
 				<br>
 			</div>
 		</div>    
@@ -60,6 +60,7 @@
 				<br>
 			</div>
 		</div>   
+			<%= link_to "Favourite", favourites_update_path(ad: @ad) %>
 			<%= link_to 'Home', root_path %> 
 	</div>
 </div>
