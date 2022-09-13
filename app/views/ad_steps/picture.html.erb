@@ -1,13 +1,9 @@
-<%= form_for @ad, url: next_wizard_path do |f| %>
+<%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
 	<%= f.hidden_field :ad_id, value: @ad.id %>
 	<%= f.file_field :images, onchange:"readURL(this);", class: "form-control", multiple: true %>
   <img id="img_prev" />
-
-
 	</div>
 		<%= f.submit "Next" %>
 		<%= link_to "Previous", ad_steps_path %>
-
-
 <% end %>
 
