@@ -51,8 +51,8 @@
       </div>
     </div>
     <div class = col-6 >
-        <%= f.label :Color %>
-        <%= f.select :color, options_for_select([['White', 'white'],['Blue', 'blue'],['Black', 'black'],['Grey', 'grey'],['Silver', 'silver']]), {include_blank: true}%>
+        <%= f.label :Image %>
+        <%= f.file_field :@ad.image %>
 
     </div>
     <%= f.label :Add_description %><br>
