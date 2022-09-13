@@ -24,7 +24,7 @@ class AdsController < ApplicationController
 private
 
 	def ad_params
-    params.require(:ad).permit(:city, :car_make, :color, :transmission_type, :assembly_type, :engine_type, :image, :milage, :engine_type, :primary_contact, :secondary_contact, :price, :add_discription, :image)
+    params.require(:ad).permit(:city, :car_make, :color, :transmission_type, :assembly_type, :engine_type, :image, :milage, :engine_type, :primary_contact, :secondary_contact, :price, :add_description )
   end
 
 end
