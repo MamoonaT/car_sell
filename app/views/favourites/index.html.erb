@@ -1,6 +1,7 @@
+<%= render "layouts/header" if current_user.present? %>
 <div class="container-fluid w-75 h-100 mt-5 p-5 text-right border bg-light ">
 	<div class="container text-center">
-	<h1> Your favourited Car </h1>
+		<h1> Your favourited Car </h1>
  		<div class="row">
 			<% current_user.favourites.each do |favourite| %>
 			<div class="col">
@@ -62,6 +63,5 @@
 				<br>
 			</div>
 		<% end %>
-		<%= link_to "Home", root_path %>
 	</div>
 </div>

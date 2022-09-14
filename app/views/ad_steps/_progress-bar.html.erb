@@ -1,0 +1,80 @@
+<ul id="progressbar">
+  <li class="active" id="detail"><strong>Details</strong></li>
+  <li id="image" class = "<%= params[:id] == "picture" || params[:id] == "contact"  ? "active" : "" %>"><strong>Images</strong></li>
+  <li id="contact" class = "<%= params[:id] == "contact" ? "active" : "" %>"><strong>Contact</strong></li>
+</ul>
+
+<style>
+  /*Icon progressbar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+}
+
+#progressbar .active {
+  color: #32a5f1;
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 15px;
+  width: 33%;
+  float: left;
+  position: relative;
+  font-weight: 400;
+}
+
+/*Icons in the ProgressBar*/
+#progressbar #detail:before {
+ content: "1";
+}
+
+#progressbar #image:before {
+  content: "2";
+}
+
+#progressbar #contact:before {
+  content: "3";
+}
+
+/*Icon ProgressBar before any progress*/
+#progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
+}
+
+/*ProgressBar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1;
+}
+
+/*Color number of the step and the connector before it*/
+#progressbar li.active:before, #progressbar li.active:after {
+  background: #32a5f1;
+}
+
+/*Animated Progress Bar*/
+.progress {
+height: 20px;
+}
+
+.progress-bar {
+background-color: #32a5f1;
+}
+</style>

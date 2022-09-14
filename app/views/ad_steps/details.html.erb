@@ -1,10 +1,11 @@
 <%= render "layouts/header" if current_user.present? %>
 <br>
 <div class="container text-center">
+  <%= render 'progress-bar'%>
   <div class="row">
     <div class="col"><%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
         <%= f.hidden_field :ad_id, value: params[:ad_id] %>
-        <%= f.label :city %>
+        <%= f.label :City %>
         <%= f.select :city, options_for_select(Ad::CITY), {include_blank: true} %>
         <br>
       </div>
@@ -19,7 +20,7 @@
     <div class="row">
       <div class="col">
         <%= f.label :'Car_Make/Model' %>
-        <%= f.select :car_make, options_for_select([['Honda', 'honda'],['Suzuki', 'suzuki'],['Toyota', 'toyata'],['Tesla', 'tesla']]), {include_blank: true} %>
+        <%= f.select :car_make, options_for_select(Ad::CAR_MAKE), {include_blank: true} %>
         <br>
       </div>
       <div class="col">
