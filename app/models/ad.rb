@@ -4,5 +4,10 @@ class Ad < ApplicationRecord
 	belongs_to :user
 	validates :primary_contact, phone: true
 	validates :secondary_contact, phone: true
+  has_many :favourites
+
+CITY = [['Lahore','lahore'],['Karachi' , 'karachi'],['Islamabad' , 'islamabad'],['Quetta' , 'quetta'],['Peshawar', 'peshawar'],['Rawalpindi', 'rawalpindi']]
+COLOR = [['White' , 'white'],['Blue' , 'blue'],['Black', 'black'],['Grey', 'grey'],['Silver' , 'silver']]	
 
 end
+

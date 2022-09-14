@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :favourites
   attr_writer :login
   has_many :ads
+  has_many :favourites
 
   def login
     @login ||= phone_number.presence || email

@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
 
 	def index
-    @ads = Ad.order(created_at: :desc)
+    @ads = Ad.order(:id).page(params[:page])
   end
 
 	def new
@@ -19,6 +19,7 @@ class AdsController < ApplicationController
 
 	def show
 		@ad= Ad.find(params[:id])  
+		@favourite_exists = Favourite.where(ad: @ad, user: current_user) == [] ? false : true
 	end
 
 private

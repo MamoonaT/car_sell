@@ -14,7 +14,7 @@ gem 'jquery-rails'
 gem 'phonelib'
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 gem 'wicked', '~> 1.3', '>= 1.3.2'
-
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
