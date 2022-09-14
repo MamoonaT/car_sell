@@ -16,7 +16,7 @@ class AdStepsController < ApplicationController
     end
     if params[:id] == 'wicked_finish'
       @ad.update(contact_params)
-      render "wicked_finish"
+      render "wicked_finish" 
     else
       render_wizard
     end

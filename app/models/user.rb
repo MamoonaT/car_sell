@@ -8,9 +8,10 @@ class User < ApplicationRecord
     with: /\A[a-zA-Z0-9. ! @ # $ % ^ & * ( ) _ - + =]+\Z/,
     message: '(minimum 8 characters are required with at least one capital letter and a special character)'
   }
-  validates :phone_number, format: { with: /\A\d{11}\z/ }
+  validates :phone_number, phone: true
   has_many :favourites
   attr_writer :login
+  has_many :ads
 
   def login
     @login ||= phone_number.presence || email
