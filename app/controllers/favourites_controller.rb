@@ -1,6 +1,8 @@
 class FavouritesController < ApplicationController
+  
   def index
   end
+
   def update
     favourite = Favourite.where(ad: Ad.find(params[:ad]), user: current_user)
       if favourite == []

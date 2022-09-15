@@ -42,7 +42,7 @@ class AdStepsController < ApplicationController
   end 
 
   def details_params
-    params.require(:ad).permit(:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type, :engine_capacity, :add_discription, :assembly_type )
+    params.require(:ad).permit(:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type, :engine_capacity, :add_description, :assembly_type )
   end
 
   def image_params
