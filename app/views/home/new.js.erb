@@ -1,0 +1,2 @@
+var searchFilter = document.querySelector('#search-filters')
+searchFilter.innerHTML = "<%= j render partial: 'layouts/search', locals: {filters: @filters} %>"

@@ -1,26 +1,22 @@
-<%# <div class="bg-info"  style="height:100hv;"> %>
-  <div class="container-fluid w-25 border rounded shadow mt-5 p-4 text-center border bg-light ">
-    <div class="field mb-3 text-start">
+<div class="bg-info" style = "height:100vh; display: flex;">
+  <div class="container-fluid w-25 border rounded shadow p-4 text-center border bg-light" style="margin: auto;">
+    <div class="field mb-3 text-start" >
     <h2>Log in</h2>
-
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div>
             <%= f.label :login %><br />
             <%= f.text_field :login %>
           </div>
-
           <div>
             <%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "current-password" %>
           </div>
-
           <% if devise_mapping.rememberable? %>
             <div class="field">
               <%= f.check_box :remember_me %>
               <%= f.label :remember_me %>
             </div>
           <% end %>
-
           <div class="actions">
             <%= f.submit "Log in" %>
           </div>
@@ -28,5 +24,4 @@
       <%= render "devise/shared/links" %>
     </section>
   </div>
-<%# </div> %>
-
+</div>

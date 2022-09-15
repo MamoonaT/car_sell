@@ -2,5 +2,13 @@
 
 # homecontroller
 class HomeController < ApplicationController
-  def index; end
+  before_action :authenticate_user!
+
+  def index
+    @filters = false
+  end
+
+  def new
+    @filters = ActiveModel::Type::Boolean.new.cast(params[:filters])
+  end
 end

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Favourites", favourites_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Post Ad", ad_steps_path, class: "nav-link" %>
+      </li>
+			<li class="nav-item" >
+        <%= link_to "My Posts", ads_path, class: "nav-link" %>
+      </li>
+			<li class="nav-item">
+			<% if user_signed_in? %>
+				<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <% else %>
+				<%= link_to "Sign_In", new_user_session_path, class: "nav-link" %>
+			<% end %>
+			</li>			
+		</ul>
+	</div>
+</nav>
