@@ -67,9 +67,9 @@
 				<%= @ad.add_description %>
 				<br>
 			</div>
-		</div>  
-			<%= link_to favourite_text, favourites_update_path(ad: @ad) , id: 'favourite_link', remote: true %>
-			<%= link_to 'Home', root_path %> 
+		</div>
+		<%= link_to favourite_text, favourite_path(ad: @ad), method: 'put', id: 'favourite_link', remote: true %>
+		<%= link_to 'Home', root_path %> 
 	</div>
 </div>
 

@@ -1,3 +1,4 @@
+# ApplicationRecord
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -5,12 +6,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   validates :username, length: { maximum: 30 }
   validates :password, format: {
-    with: /\A[a-zA-Z0-9. ! @ # $ % ^ & * ( ) _ - + =]+\Z/,
-    message: '(minimum 8 characters are required with at least one capital letter and a special character)'
+    with: /\A[a-zA-Z0-9. !@#$%^&*()_ -+=]+\Z/,
+    message: '(minimum 8 characters are required with at least one capital letter and a special character)',
   }
   validates :phone_number, phone: true
   has_many :favourites
   attr_writer :login
+
   has_many :ads
   has_many :favourites
 

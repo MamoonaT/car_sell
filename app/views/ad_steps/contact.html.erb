@@ -1,9 +1,7 @@
 <%= render "layouts/header" if current_user.present? %>
 <br>
-<div class="container-fluid">
- <%= render 'progress-bar'%>
-</div>
-<div class="container-fluid w-75 h-100 mt-5 p-5 text-right border bg-light ">
+<div class="container text-center">
+  <%= render 'progress-bar'%>
 	<%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
 		<%= f.hidden_field :ad_id, value: @ad.id %>
 			<div class="container text-center">

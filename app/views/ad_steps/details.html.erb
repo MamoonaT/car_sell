@@ -3,7 +3,8 @@
 <div class="container text-center">
   <%= render 'progress-bar'%>
   <div class="row">
-    <div class="col"><%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
+    <div class="col">
+      <%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
       <%= f.hidden_field :ad_id, value: params[:ad_id] %>
       <%= f.label :City %>
       <%= f.select :city, options_for_select(Ad::CITY), {include_blank: true} %>
@@ -57,5 +58,6 @@
     </div>
     <%= f.submit "next" %>
     <% end %> 
+    <form>
   </div>
 </div>

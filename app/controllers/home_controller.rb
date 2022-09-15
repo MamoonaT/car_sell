@@ -11,5 +11,4 @@ class HomeController < ApplicationController
   def new
     @filters = ActiveModel::Type::Boolean.new.cast(params[:filters])
   end
-  
 end

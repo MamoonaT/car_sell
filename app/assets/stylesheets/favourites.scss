@@ -1,3 +1,12 @@
 // Place all the styles related to the Favourites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#uploadFile {
+  opacity: 0;
+  width: 0;
+  float: left; /* Reposition so the validation message shows over the label */
+}
+
+div {
+    text-align: center;
+}
