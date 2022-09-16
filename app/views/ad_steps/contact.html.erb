@@ -23,6 +23,7 @@
 				</div>
 			</div>
 		<%= f.submit "Create" %>
-		<%= link_to "Back", previous_wizard_path %>
+		<%= link_to "Get featured", next_wizard_path %>
+		<%= link_to "Back", previous_wizard_path, data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?"} %>
 	<% end %>
 </div>

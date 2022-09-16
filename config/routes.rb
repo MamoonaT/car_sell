@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
   get 'home/new'
+  get 'home/search', to: 'home#search'
   resources :ads
   resources :ad_steps
   resources :favourites

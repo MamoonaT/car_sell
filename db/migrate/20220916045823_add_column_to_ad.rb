@@ -1,0 +1,5 @@
+class AddColumnToAd < ActiveRecord::Migration[5.2]
+  def change
+    add_column :ads, :engine_capacity, :string
+  end
+end

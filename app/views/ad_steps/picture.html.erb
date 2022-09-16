@@ -10,7 +10,7 @@
 			<img id="img_prev" />
 			<br>
 			<%= f.submit "Next" %>
-			<%= link_to "Back", ad_steps_path %>	
+			<%= link_to "Back", ad_steps_path, data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?" } %>	
 			<% end %>
 		</div>
 	<div>

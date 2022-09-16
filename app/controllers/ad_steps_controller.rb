@@ -10,8 +10,7 @@ class AdStepsController < ApplicationController
   def update
     case step
     when :picture then @ad.update(details_params)
-    when :contact then @ad.update(image_params)
-    end
+    when :contact then @ad.update(image_params) end
     if params[:id] == 'wicked_finish'
       @ad.update(contact_params)
       render 'wicked_finish'
@@ -29,7 +28,7 @@ class AdStepsController < ApplicationController
     @ad = if ad_id.present?
             Ad.find_by(id: ad_id)
           else
-            Ad.new
+            Ad.new(user_id: current_user.id)
           end
   end
 

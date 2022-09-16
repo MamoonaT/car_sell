@@ -1,4 +1,7 @@
 class AdsController < ApplicationController
+  before_action :find_ad, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit, :update]
+
   def index
     @ads = Ad.order(:id).page(params[:page])
   end
@@ -8,7 +11,6 @@ class AdsController < ApplicationController
   end
 
   def create
-    @ad = Ad.new(params[:id])
     if @ad.save
       session[:ad_id] = @ad.id
       @ad.update_attributes(ad_params)
@@ -18,12 +20,28 @@ class AdsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update; end
+
   def show
-    @ad = Ad.find(params[:id])
     @favourite_exists = Favourite.where(ad: @ad, user: current_user) != []
   end
 
+  def destroy
+    @ad.destroy
+    redirect_to root_path
+  end
+
   private
+
+  def authorize
+    authorize @ad
+  end
+
+  def find_ad
+    @ad = Ad.find(params[:id])
+  end
 
   def ad_params
     params.require(:ad).permit(:city, :car_make, :color, :transmission_type, :assembly_type, :engine_type, :image,

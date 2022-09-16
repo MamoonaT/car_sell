@@ -133,3 +133,4 @@ Lint/DuplicateMethods:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+  
