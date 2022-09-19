@@ -1,0 +1,6 @@
+<div class="container-fluid w-75 h-100 mt-5 p-5 text-right border bg-light ">
+  <p>Search Result</p>
+  <% @result&.each do |result| %>
+  <%= link_to result.searchable.car_make, ad_path(result.searchable) %><br>
+  <% end %>
+</div>

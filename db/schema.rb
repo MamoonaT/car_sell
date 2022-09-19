@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_13_084717) do
+ActiveRecord::Schema.define(version: 2022_09_16_045823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_09_13_084717) do
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
-c    t.text "metadata"
+    t.text "metadata"
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
@@ -51,6 +51,8 @@ c    t.text "metadata"
     t.datetime "updated_at", null: false
     t.string "primary_contact"
     t.string "secondary_contact"
+    t.string "engine_capacity"
+    t.string "string"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -60,6 +62,15 @@ c    t.text "metadata"
     t.datetime "updated_at", null: false
     t.index ["ad_id"], name: "index_favourites_on_ad_id"
     t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
   create_table "users", force: :cascade do |t|
