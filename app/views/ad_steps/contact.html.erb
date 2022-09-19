@@ -16,14 +16,14 @@
 			<div class="container text-center">
 				<div class="row">
 					<div class="col">
-					<%= f.label :Secondary_Contact %>
+					  <%= f.label :Secondary_Contact %>
 				   	<%= f.text_field :secondary_contact,  placeholder: '+923xxxxxxxxx', class: "form-control #{'is-invalid' if 'invalid'}" %>
 						<br>
 					</div>
 				</div>
 			</div>
 		<%= f.submit "Create" %>
-		<%= f.submit "Get featured" %>
+		<%= link_to "Get featured", checkout_create_path, params: {id: @ad.id}, remote: true %>
 		<%= link_to "Back", previous_wizard_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?"} %>
 	<% end %>
 </div>
