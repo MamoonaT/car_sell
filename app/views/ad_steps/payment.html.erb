@@ -1,7 +1,4 @@
-<%= render "layouts/header" if current_user.present? %>
-<br>
-<div class="container text-center">
-  <%= render 'progress-bar'%>
+<%= link_to "Back", previous_wizard_path(ad_id: @ad.id) %>
 	<%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
 		<%= f.hidden_field :ad_id, value: @ad.id %>
 			<div class="container text-center">
@@ -22,8 +19,4 @@
 					</div>
 				</div>
 			</div>
-		<%= f.submit "Create" %>
-		<%= f.submit "Get featured" %>
-		<%= link_to "Back", previous_wizard_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?"} %>
-	<% end %>
-</div>
+				<% end %>
