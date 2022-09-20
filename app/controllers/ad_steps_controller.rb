@@ -9,11 +9,11 @@ class AdStepsController < ApplicationController
 
   def update
     case step
-      when :picture then @ad.update(details_params)
-      when :contact then @ad.update(image_params)
+    when :picture then @ad.update(details_params)
+    when :contact then @ad.update(image_params)
     end
     if params[:id] == 'wicked_finish'
-      @ad.update(contact_params)    
+      @ad.update(contact_params)
       render 'wicked_finish'
     else
       render_wizard

@@ -23,7 +23,6 @@
 				</div>
 			</div>
 		<%= f.submit "Create" %>
-		<%= link_to "Get featured", checkout_create_path, params: {id: @ad.id}, remote: true %>
 		<%= link_to "Back", previous_wizard_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?"} %>
 	<% end %>
 </div>
