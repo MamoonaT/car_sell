@@ -18,6 +18,7 @@ gem 'pundit'
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 gem 'stripe'
 gem 'wicked', '~> 1.3', '>= 1.3.2'
+gem "interactor-rails", "~> 2.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'

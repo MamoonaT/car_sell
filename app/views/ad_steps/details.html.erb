@@ -7,7 +7,7 @@
       <%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
       <%= f.hidden_field :ad_id, value: params[:ad_id] %>
       <%= f.label :City %>
-      <%= f.select :city, options_for_select(Ad::CITY), {include_blank: true} %>
+      <%= f.select :city, options_for_select(Ad::CITY) %>
       <br>
     </div>
     <div class="col">
@@ -21,12 +21,12 @@
   <div class="row">
     <div class="col">
       <%= f.label :'Car_Make/Model' %>
-      <%= f.select :car_make, options_for_select(Ad::CAR_MAKE), {include_blank: true} %>
+      <%= f.select :car_make, options_for_select(Ad::CAR_MAKE) %>
       <br>
     </div>
     <div class="col">
       <%= f.label :Transmission_Type %>
-      <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]), {include_blank: true} %><br>
+      <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]) %><br>
       <br>
     </div>
   </div>
@@ -40,7 +40,7 @@
     </div>
     <div class="col">
       <%= f.label :Engine_Type %>
-      <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%><br>
+      <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']])%><br>
       <br>
     </div>
   </div>
@@ -49,7 +49,7 @@
   <div class="row">
     <div class = col-6 >
       <%= f.label :Color %>
-      <%= f.select :color, options_for_select(Ad::COLOR), {include_blank: true}%>
+      <%= f.select :color, options_for_select(Ad::COLOR)%>
     </div>
     <div class = col-6 >    
       <%= f.label :Assembly_Type %><br>

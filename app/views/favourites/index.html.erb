@@ -3,7 +3,7 @@
 	<div class="container text-center">
 		<h1> Your favourite Car </h1>
  		<div class="row">
-			<% current_user.favourites.each do |favourite| %>
+			<% @favourites.each do |favourite| %>
 			<div class="col">
 				<p> City </p>
 				<%= favourite.ad.city %>

@@ -1,23 +1,18 @@
 class FavouritesController < ApplicationController
-  def index; end
+  before_action :set_ad, only: %i[update]
+
+  def index
+    @favourites = current_user.favourites
+  end  
 
   def update
-    favourite = Favourite.where(ad: Ad.find(params[:ad]), user: current_user)
-    mark_favourite(favourite)
+    result = UpdateFavourite.call(ad: @ad, user: current_user)
+    @favourite_exists = result.favourite_exists
   end
-end
 
   private
 
-def mark_favourite(favourite)
-  if favourite == []
-    Favourite.create(ad: Ad.find(params[:ad]), user: current_user)
-    @favourite_exists = true
-  else
-    favourite.destroy_all
-    @favourite_exists = false
-  end
-  respond_to do |format|
-    format.js
+  def set_ad
+    @ad = Ad.find(params[:id])
   end
 end
