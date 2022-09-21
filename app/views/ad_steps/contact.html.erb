@@ -1,5 +1,3 @@
-<%= render "layouts/header" if current_user.present? %>
-<br>
 <div class="container text-center">
   <%= render 'progress-bar'%>
 	<%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
@@ -9,7 +7,6 @@
 					<div class="col">
 					  <%= f.label :Primary_Contact %>
 				   	<%= f.text_field :primary_contact,  placeholder: '+923xxxxxxxxx', class: "form-control #{'is-invalid' if 'invalid'}" %>
-						<br>
 					</div>
 				</div>
 			</div>
@@ -18,7 +15,6 @@
 					<div class="col">
 					  <%= f.label :Secondary_Contact %>
 				   	<%= f.text_field :secondary_contact,  placeholder: '+923xxxxxxxxx', class: "form-control #{'is-invalid' if 'invalid'}" %>
-						<br>
 					</div>
 				</div>
 			</div>

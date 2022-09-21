@@ -6,15 +6,12 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div>
-          <br>
           <%= f.text_field :username, :placeholder => "Username" %>
         </div>
         <div>
-          <br>
           <%= f.text_field :phone_number, :placeholder => "+923xxxxxxxxx" %>
         </div>
         <div>
-          <br>
           <%= f.email_field :email, :placeholder => "your-email@address.com" %>
         </div>
         <div>
@@ -26,14 +23,12 @@
           </div>
         </div>
         <div class="field">
-          <%= f.password_field :password_confirmation, :placeholder => "Please confirm the password" %><br>
-          <br>
+          <%= f.password_field :password_confirmation, :placeholder => "Please confirm the password" %>
         </div>
         <div class="actions">
           <%= f.submit "Create" %>
         </div>
       <% end %>
-    <br>
      <p>Have an account? login here <%= render "devise/shared/links" %></p>
     </div>
   </div>

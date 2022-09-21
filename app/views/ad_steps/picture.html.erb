@@ -1,5 +1,3 @@
-<%= render "layouts/header" if current_user.present? %>
-<br>
 <div class="container text-center">
 	<%= render 'progress-bar'%>
   <div class="row">
@@ -8,7 +6,6 @@
 			<%= f.hidden_field :ad_id, value: @ad.id %>
 			<%= f.file_field :images, class: "form-control", multiple: true %>
 			<img id="img_prev" />
-			<br>
 			<%= f.submit "Next" %>
 			<%= link_to "Back", ad_steps_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?" } %>	
 			<% end %>
