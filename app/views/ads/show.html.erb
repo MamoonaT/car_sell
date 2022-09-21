@@ -1,81 +1,66 @@
-<%= render "layouts/header" if current_user.present? %>
 <div class="container-fluid w-75 h-100 mt-5 p-10 text-right border bg-light ">
 	<div class="container text-center">
  		<div class="row">
 			<div class="col">
 				<p> City </p>
 				<%= @ad.city %>
-				<br>
 			</div>
 			<div class="col">
 				<p>Car Make/Model </p>
 				<%= @ad.car_make %>
-				<br>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<p> Milage </p>
 				<%= @ad.milage %>
-				<br>
 			</div>
 			<div class="col">
 				<p>Engine_Type </p>
 				<%= @ad.engine_type%>
-				<br>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<p> Transmission_Type </p>
 				<%= @ad.transmission_type %>
-				<br>
 			</div>
 			<div class="col">
 				<p>Color </p>
 				<%= @ad.color%>
-				<br>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<p> Price </p>
 				<%= @ad.price %>
-				<br>
 			</div>
 			<div class="col">
 				<p>Image:</p>
 				<%= image_tag @ad.images.first, style: "width: 300px;height: 200px" if  @ad.images.attached? %>
-				<br>
 			</div>
 		</div>    
 		<div class="row">
 			<div class="col">
 				<p> Primary_Contact </p>
 				<%=  @ad.primary_contact %>
-				<br>
 			</div>
 			<div class="col">
 				<p>Secondary_Contact </p>
 				<%= @ad.secondary_contact%>
-				<br>
 			</div>
 		</div>  
 		<div class="row">
  			<div class="col">
 				<p>Add_Description</p>
 				<%= @ad.add_description %>
-				<br>
 			</div>
 		</div>
 		<button type="button" class="btn btn-outline-dark">
 			<%= link_to favourite_text, favourite_path(ad: @ad), method: 'put', id: 'favourite_link', remote: true %>
 		</button>
 		<button type="button" class="btn btn-outline-dark">
-			<%= link_to 'Home', root_path %> 
-		</button>
-		<button type="button" class="btn btn-outline-dark">
-			<%= link_to "Edit Ad", ad_steps_path(ad_id: @ad.id) if user_signed_in?%>
+			<%= link_to "Edit Ad", edit_ad_path(ad_id: @ad.id) if user_signed_in?%>
 		</button>
 		<button type="button" class="btn btn-outline-danger">
 			<%= link_to "Delete Ad", ad_path(@ad), method: :delete, data:{ confirm: "Are you sure?" } %>

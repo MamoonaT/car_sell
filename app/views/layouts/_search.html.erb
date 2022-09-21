@@ -4,19 +4,16 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-					<%= f.label :city %><br>
-					<%= f.select :city, options_for_select(Ad::CITY), {include_blank: true}%>
-					<br>
+					<%= f.label :city %>
+					<%= f.select :city, options_for_select(Ad::CITY), {include_blank: true}%>	
         </div>
         <div class="col">
-					<%= f.label :Milage %><br>
-					<%= f.text_field :milage, placeholder: 'in km/h' %><br>
-					<br>
+					<%= f.label :Milage %>
+					<%= f.text_field :milage, placeholder: 'in km/h' %>
         </div>
 				<div class="col">
-          <%= f.label :'Car_Make/Model' %><br>
+          <%= f.label :'Car_Make/Model' %>
           <%= f.select :car_make, options_for_select([['Honda', 'honda'],['Suzuki', 'suzuki'],['Toyota', 'toyata'],['Tesla', 'tesla']]), {include_blank: true} %>
-          <br>
         </div>
       </div>
 		</div>
@@ -24,37 +21,32 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <%= f.label :Transmission_Type %><br>
-          <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]), {include_blank: true} %><br>
-          <br>
+          <%= f.label :Transmission_Type %>
+          <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]), {include_blank: true} %>        
         </div>
 				<div class="col">
-          <%= f.label :Price %><br>
-          <%= f.text_field :price, placeholder: 'should be entered in PKR' %><br>
-          <br>
+          <%= f.label :Price %>
+          <%= f.text_field :price, placeholder: 'should be entered in PKR' %>
         </div>
 				<div class="col">
-					<%= f.label :Engine_Type %><br>
-					<%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%><br>
-					<br>
+					<%= f.label :Engine_Type %>
+					<%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%>					
 				</div>
 			</div>
 		</div>
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <%= f.label :Assembly_Type %><br>
-					<%= f.select :assembly_type, options_for_select([['International', 'international'],['Local', 'local']]), {include_blank: true}%><br>
-          <br>
+          <%= f.label :Assembly_Type %>
+					<%= f.select :assembly_type, options_for_select([['International', 'international'],['Local', 'local']]), {include_blank: true}%>
         </div>
         <div class="col">		
-					<%= f.label :Engine_Capacity %><br>
+					<%= f.label :Engine_Capacity %>
 					<%= f.select :engine_capacity, options_for_select(Ad::ENGINE_CAPACITY), {include_blank: true} %>
 				</div>
 				<div class="col">		
-					<%= f.label :Color %><br>
+					<%= f.label :Color %>
 	      	<%= f.select :car_make, options_for_select(Ad::COLOR), {include_blank: true} %>
-  		  	<br>
 				</div>
 			</div>
     </div>
@@ -68,7 +60,6 @@
 						</button>
 						<div class="col-sm-11 mt-3">
 							<%= f.submit "search" %>	
-							<button type="button" class="border">CLEAR FILTER</button>
 						</div>			
 					</div>
 				</div>

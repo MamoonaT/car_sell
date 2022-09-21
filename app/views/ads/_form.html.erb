@@ -13,13 +13,11 @@
         <div class="col">
          <%= f.label :City %>
           <%= f.select :city, options_for_select([['Lahore', 'lahore'],['Karachi', 'karachi'],['Islamabad', 'islamabad'],['Quette', 'quetta'],['Peshawar', 'peshawar'],['Rawalpindi', 'rawalpindi']]), {include_blank: true}%>
-          <br>
         </div>
         <div class="col">
             <%= f.label :Milage %>
-            <%= f.text_field :milage, placeholder: 'in km/h' %><br>
-            <br>
-          </div>
+            <%= f.text_field :milage, placeholder: 'in km/h' %>
+            </div>
         </div>
       </div>
     <div class="container text-center">
@@ -27,12 +25,10 @@
         <div class="col">
           <%= f.label :'Car_Make/Model' %>
           <%= f.select :car_make, options_for_select([['Honda', 'honda'],['Suzuki', 'suzuki'],['Toyota', 'toyata'],['Tesla', 'tesla']]), {include_blank: true} %>
-          <br>
         </div>
         <div class="col">
           <%= f.label :Transmission_Type %>
           <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]), {include_blank: true} %><br>
-          <br>
         </div>
       </div>
     </div>
@@ -43,13 +39,11 @@
         <div class="col">
          <%= f.label :City %>
           <%= f.select :city, options_for_select([['Lahore', 'lahore'],['Karachi', 'karachi'],['Islamabad', 'islamabad'],['Quette', 'quetta'],['Peshawar', 'peshawar'],['Rawalpindi', 'rawalpindi']]), {include_blank: true}%>
-          <br>
         </div>
         <div class="col">
             <%= f.label :Milage %>
-            <%= f.text_field :milage, placeholder: 'in km/h' %><br>
-            <br>
-          </div>
+            <%= f.text_field :milage, placeholder: 'in km/h' %>
+            </div>
         </div>
       </div>
     <div class="container text-center">
@@ -57,12 +51,10 @@
         <div class="col">
           <%= f.label :'Car_Make/Model' %>
           <%= f.select :car_make, options_for_select([['Honda', 'honda'],['Suzuki', 'suzuki'],['Toyota', 'toyata'],['Tesla', 'tesla']]), {include_blank: true} %>
-          <br>
         </div>
         <div class="col">
           <%= f.label :Transmission_Type %>
           <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]), {include_blank: true} %><br>
-          <br>
         </div>
       </div>
     </div>
@@ -70,43 +62,37 @@
       <div class="row">
         <div class="col">
           <%= f.label :Price %>
-          <%= f.text_field :price, placeholder: 'should be entered in PKR' %><br>
-          <br>
+          <%= f.text_field :price, placeholder: 'should be entered in PKR' %>
         </div>
       <div class="col">
         <%= f.label :Engine_Type %>
-        <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%><br>
-        <br>
+        <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%>
       </div>
     </div>
     <div class = col-6 >
         <%= f.label :Image %>
         <%= f.file_field :@ad.image %>
     </div>
-    <%= f.label :Add_description %><br>
-    <%= f.text_field :add_description %><br>
-    <br>
+    <%= f.label :Add_description %>
+    <%= f.text_field :add_description %> 
     <%= f.submit "Next" %>
   <% end %>      
   <div class="row">
         <div class="col">
           <%= f.label :Price %>
-          <%= f.text_field :price, placeholder: 'should be entered in PKR' %><br>
-          <br>
+          <%= f.text_field :price, placeholder: 'should be entered in PKR' %>
         </div>
       <div class="col">
         <%= f.label :Engine_Type %>
-        <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%><br>
-        <br>
+        <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'], ['Hybrid','hybrid']]), {include_blank: true}%>   
       </div>
     </div>
     <div class = col-6 >
-        <%= f.label :Image %>
-        <%= f.file_field :@ad.image %>
+      <%= f.label :Image %>
+      <%= f.file_field :@ad.image %>
     </div>
-    <%= f.label :Add_description %><br>
-    <%= f.text_field :add_description %><br>
-    <br>
+    <%= f.label :Add_description %>
+    <%= f.text_field :add_description %>
     <%= f.submit "Next" %>
   <% end %> 
 </div>

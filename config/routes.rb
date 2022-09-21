@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :ads
   resources :ad_steps
   resources :favourites
+  post 'checkout/create', to: 'checkout#create'
 end

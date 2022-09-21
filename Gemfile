@@ -16,6 +16,7 @@ gem 'pg_search'
 gem 'phonelib'
 gem 'pundit'
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
+gem 'stripe'
 gem 'wicked', '~> 1.3', '>= 1.3.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
