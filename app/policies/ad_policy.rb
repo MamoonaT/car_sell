@@ -1,32 +1,26 @@
 # frozen_string_literal: true
 
 class AdPolicy < ApplicationPolicy
-  class Scope < AdPolicy
-    attr_reader :user, :scope
+  alias ad record
 
-    def pundit_user
-      current_users
-    end
-
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
-    def resolve
-      @scope.where(ad_id: @user.ad_id)
-    end
+  def index?
+    user.id == ad.user_id
   end
 
+  def create
+    user.id == ad.user_id
+  end
+  
   def update?
-    user.present?
+    user.id == ad.user_id
   end
 
   def edit?
-    user.present?
+    user.id == ad.user_id
   end
 
   def destroy?
-    user.present?
+    user.id == ad.user_id
   end
+
 end

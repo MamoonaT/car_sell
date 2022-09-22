@@ -1,14 +1,11 @@
-<%= render "layouts/header" if current_user.present? %>
 <div class="container-fluid w-75 h-80 mt-5 p-20	 text-right border bg-light ">
 	<div class="position-relative m-4">
 		<h1> Ads List</h1>
 		<% @ads.each do |ad| %>
 			<h2><%= ad.id %></h2>
 			<%= link_to "See Details", ad %>
-			<br>
 		<% end %>
 			<%= paginate @ads %>
-			<%= link_to "Home", root_path %>
 	</div>
 </div>
 

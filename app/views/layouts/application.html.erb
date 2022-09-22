@@ -10,7 +10,9 @@
   </head>
 
   <body>
-  
+  <%= render "layouts/header" if current_user.present? %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

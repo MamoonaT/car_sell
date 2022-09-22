@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
   before_action :find_ad, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, only: [:edit, :update]
+  before_action :authorization, only: [:edit, :update, :destroy]
 
   def index
     @ads = Ad.order(:id).page(params[:page])
@@ -20,9 +20,15 @@ class AdsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;  end
 
-  def update; end
+  def update
+    if @ad.update(ad_params)
+      redirect_to ad_path
+    else
+      render :edit, alert: 'You are not authorized'
+    end
+  end
 
   def show
     @favourite_exists = Favourite.where(ad: @ad, user: current_user) != []
@@ -30,12 +36,12 @@ class AdsController < ApplicationController
 
   def destroy
     @ad.destroy
-    redirect_to root_path
+    redirect_to ad_path
   end
 
   private
 
-  def authorize
+  def authorization
     authorize @ad
   end
 
