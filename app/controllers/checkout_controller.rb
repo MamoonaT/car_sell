@@ -1,25 +1,14 @@
 class CheckoutController < ApplicationController
+before_action :set_ad
+
   def create
-    ad = Ad.find(params[:id])
-    product = Stripe::Product.create({ name: ad.add_description })
-    price = Stripe::Price.create({
-                                   unit_amount: 2000,
-                                   currency: 'usd',
-                                   product: product.id,
-                                 })
-    @session =
-      Stripe::Checkout::Session.create({
-                                         payment_method_types: ['card'],
-                                         line_items: [{
-                                           price: price.id,
-                                           quantity: 1,
-                                         }],
-                                         mode: 'payment',
-                                         success_url: root_url,
-                                         cancel_url: root_url,
-                                       })
-    respond_to do |format|
-      format.js
-    end
+    @session = Checkout.call(ad: @ad, success_or_cancel_url: root_url).session
+    respond_to {|format| format.js}
+  end
+
+  private
+
+  def set_ad
+    @ad = Ad.find(params[:id])
   end
 end
