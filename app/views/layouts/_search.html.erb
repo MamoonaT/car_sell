@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col">
 					<%= f.label :city %>
-					<%= f.select :city, options_for_select(Ad::CITY), {include_blank: true}%>	
+					<%= f.select :city, options_for_select([['Lahore', 'lahore'],['Quetta', 'quetta'],['Peshawar', 'peshawar'],['Islamabad', 'islamabad']])%>	
         </div>
         <div class="col">
 					<%= f.label :Milage %>
@@ -13,7 +13,7 @@
         </div>
 				<div class="col">
           <%= f.label :'Car_Make/Model' %>
-          <%= f.select :car_make, options_for_select([['Honda', 'honda'],['Suzuki', 'suzuki'],['Toyota', 'toyata'],['Tesla', 'tesla']]), {include_blank: true} %>
+          <%= f.select :car_make, options_for_select([['Honda', 'honda'],['Suzuki', 'suzuki'],['Toyota', 'toyata'],['Tesla', 'tesla']]) %>
         </div>
       </div>
 		</div>
@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col">
           <%= f.label :Transmission_Type %>
-          <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]), {include_blank: true} %>        
+          <%= f.select :transmission_type, options_for_select([['Automatic Manual', 'automatic manual'],['Manual', 'manual']]) %>        
         </div>
 				<div class="col">
           <%= f.label :Price %>
@@ -38,7 +38,7 @@
       <div class="row">
         <div class="col">
           <%= f.label :Assembly_Type %>
-					<%= f.select :assembly_type, options_for_select([['International', 'international'],['Local', 'local']]), {include_blank: true}%>
+					<%= f.select :assembly_type, options_for_select([['International', 'international'],['Local', 'local']])%>
         </div>
         <div class="col">		
 					<%= f.label :Engine_Capacity %>
@@ -46,7 +46,7 @@
 				</div>
 				<div class="col">		
 					<%= f.label :Color %>
-	      	<%= f.select :car_make, options_for_select(Ad::COLOR), {include_blank: true} %>
+	      	<%= f.select :car_make, options_for_select(Ad::COLOR) %>
 				</div>
 			</div>
     </div>

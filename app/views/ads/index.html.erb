@@ -2,10 +2,10 @@
 	<div class="position-relative m-4">
 		<h1> Ads List</h1>
 		<% @ads.each do |ad| %>
-			<h2><%= ad.id %></h2>
+			<h2><%= ad.car_make %></h2>
 			<%= link_to "See Details", ad %>
 		<% end %>
-			<%= paginate @ads %>
+		<%= paginate @ads %>
 	</div>
 </div>
 

@@ -10,7 +10,7 @@ class AdPolicy < ApplicationPolicy
   def create
     user.id == ad.user_id
   end
-  
+
   def update?
     user.id == ad.user_id
   end
@@ -22,5 +22,4 @@ class AdPolicy < ApplicationPolicy
   def destroy?
     user.id == ad.user_id
   end
-
 end

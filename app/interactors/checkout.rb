@@ -1,12 +1,11 @@
 class Checkout < ApplicationInteractor
-  include Interactor 
-
-  delegate :ad, :session, :success_or_cancel_url, to: :context 
+  include Interactor
+  delegate :ad, :session, :success_or_cancel_url, to: :context
 
   def call
     context.session = stripe_session
   end
-  
+
   private
 
   def stripe_product

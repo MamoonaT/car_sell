@@ -7,7 +7,7 @@
 			<%= f.file_field :images, class: "form-control", multiple: true %>
 			<img id="img_prev" />
 			<%= f.submit "Next" %>
-			<%= link_to "Back", ad_steps_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?" } %>	
+			<%= link_to "Back", ad_steps_path(ad_id: @ad.id)%>	
 			<% end %>
 		</div>
 	<div>

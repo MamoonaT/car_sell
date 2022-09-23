@@ -1,7 +1,7 @@
 class UpdateFavourite
   include Interactor
 
-  delegate :ad, :user, :favourite_exists, to: :context 
+  delegate :ad, :user, :favourite_exists, to: :context
 
   def call
     toggle_favourite
@@ -11,7 +11,6 @@ class UpdateFavourite
 
   def toggle_favourite
     favourite = user.favourites.exists?(ad_id: ad.id)
-
     if favourite
       user.favourites.find_by(ad_id: ad.id).destroy
       context.favourite_exists = false
@@ -20,5 +19,4 @@ class UpdateFavourite
       context.favourite_exists = true
     end
   end
-
 end

@@ -20,7 +20,7 @@ class AdsController < ApplicationController
     end
   end
 
-  def edit;  end
+  def edit; end
 
   def update
     if @ad.update(ad_params)
@@ -36,7 +36,7 @@ class AdsController < ApplicationController
 
   def destroy
     @ad.destroy
-    redirect_to ad_path
+    redirect_to root_path
   end
 
   private

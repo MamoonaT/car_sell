@@ -1,56 +1,14 @@
 <div class="container-fluid w-75 h-100 mt-5 p-5 text-right border bg-light ">
 	<div class="container text-center">
 		<h1> Your favourite Car </h1>
+		<p>Car Make/Model</p>
  		<div class="row">
 			<% @favourites.each do |favourite| %>
-			<div class="col">
-				<p> City </p>
-				<%= favourite.ad.city %>
-			</div>
-			<div class="col">
-				<p>Car Make/Model </p>
-				<%= favourite.ad.car_make %>
-			</div>
+			<%= link_to favourite.ad.car_make, ad_path(favourite.ad_id) %>
+			<% end %>
 		</div>
-		<div class="row">
-			<div class="col">
-				<p> Milage </p>
-				<%= favourite.ad.milage %>
-			</div>
-			<div class="col">
-				<p>Engine_Type </p>
-				<%= favourite.ad.engine_type%>
-			</div>
+		<div class="container text-center">
+			<%= paginate @favourites %>
 		</div>
-		<div class="row">
-			<div class="col">
-				<p> Transmission_Type </p>
-				<%= favourite.ad.transmission_type %>
-			</div>
-			<div class="col">
-				<p>Color </p>
-				<%= favourite.ad.color%>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<p> Transmission_Type </p>
-				<%= favourite.ad.transmission_type %>
-			</div>
-			<div class="col">
-				<p>Image:</p>
-				<%= image_tag favourite.ad.images.first, style: "width: 300px;height: 200px" if  favourite.ad.images.attached? %>
-			</div>
-		</div>    
-		<div class="row">
-			<div class="col">
-				<p> Primary_Contact </p>
-				<%=  favourite.ad.primary_contact %>
-			</div>
-			<div class="col">
-				<p>Secondary_Contact </p>
-				<%= favourite.ad.secondary_contact%>
-			</div>
-		<% end %>
 	</div>
 </div>
