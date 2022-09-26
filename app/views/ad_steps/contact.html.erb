@@ -1,7 +1,14 @@
 <div class="container text-center">
   <%= render 'progress-bar'%>
-	<%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
+	<%= form_for @ad, url: wizard_path, method: "PUT" do |f| %>
 		<%= f.hidden_field :ad_id, value: @ad.id %>
+      <% if f.object.errors.any? %>
+        <div class="error_messages">
+          <% f.object.errors.full_messages.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>			
 			<div class="container text-center">
 				<div class="row">
 					<div class="col">
@@ -18,7 +25,8 @@
 					</div>
 				</div>
 			</div>
-		<%= f.submit "Create" %>
+		<%= f.submit 'Create' %>
 		<%= link_to "Back", previous_wizard_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?"} %>
 	<% end %>
+	<%= link_to "Get featured", checkout_create_path(id: @ad.id), method: :post, remote: true %>
 </div>

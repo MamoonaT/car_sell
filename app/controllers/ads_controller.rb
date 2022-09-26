@@ -3,21 +3,22 @@ class AdsController < ApplicationController
   before_action :authorization, only: [:edit, :update, :destroy]
 
   def index
-    @ads = Ad.order(:id).page(params[:page])
+    @ads = Ad.all.page(params[:page])
   end
+
+  def myads
+    @ads = current_user.ads.page(params[:page])
+  end
+
 
   def new
     @ad = Ad.new
   end
 
   def create
-    if @ad.save
-      session[:ad_id] = @ad.id
-      @ad.update_attributes(ad_params)
-      redirect_to ad_steps_path
-    else
-      render :new
-    end
+    @ad = current_user.ads.build
+    @ad.save(validate: false)
+    redirect_to ad_ad_steps_path(@ad)
   end
 
   def edit; end
@@ -36,7 +37,7 @@ class AdsController < ApplicationController
 
   def destroy
     @ad.destroy
-    redirect_to root_path
+    redirect_to ads_path
   end
 
   private
