@@ -2,14 +2,21 @@
   <%= render 'progress-bar'%>
   <div class="row">
     <div class="col">
-      <%= form_for @ad, url: next_wizard_path, method: "PUT" do |f| %>
+      <%= form_for @ad, url: wizard_path, method: "PUT" do |f| %>
+      <% if f.object.errors.any? %>
+        <div class="error_messages">
+          <% f.object.errors.full_messages.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>
       <%= f.hidden_field :ad_id, value: params[:ad_id] %>
       <%= f.label :City %>
       <%= f.select :city, options_for_select(Ad::CITY) %>
     </div>
     <div class="col">
       <%= f.label :Milage %>
-      <%= f.text_field :milage, placeholder: 'in km/h' %>
+      <%= f.text_field :milage, placeholder: 'in km/h', required: true %>
     </div>
   </div>
 </div>

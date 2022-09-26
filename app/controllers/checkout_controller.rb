@@ -2,7 +2,7 @@ class CheckoutController < ApplicationController
   before_action :set_ad
 
   def create
-    @session = Checkout.call(ad: @ad, success_or_cancel_url: root_url).session
+    @session = Checkout.call(ad: @ad, success_or_cancel_url: ad_ad_step_url(@ad, 'contact')).session
     respond_to { |format| format.js }
   end
 
@@ -12,3 +12,4 @@ class CheckoutController < ApplicationController
     @ad = Ad.find(params[:id])
   end
 end
+
