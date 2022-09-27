@@ -14,7 +14,7 @@ class Checkout < ApplicationInteractor
 
   def stripe_price
     Stripe::Price.create({
-                           unit_amount: ad.price,
+                           unit_amount: 200,
                            currency: 'usd',
                            product: stripe_product.id,
                          })

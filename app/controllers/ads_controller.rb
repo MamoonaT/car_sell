@@ -10,7 +10,6 @@ class AdsController < ApplicationController
     @ads = current_user.ads.page(params[:page])
   end
 
-
   def new
     @ad = Ad.new
   end

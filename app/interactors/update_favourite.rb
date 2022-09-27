@@ -11,9 +11,8 @@ class UpdateFavourite
 
   def toggle_favourite
     favourite = user.favourites.exists?(ad_id: ad.id)
-    if favourite
-      user.favourites.find_by(ad_id: ad.id).destroy
-      context.favourite_exists = false
+    if favourite then user.favourites.find_by(ad_id: ad.id).destroy
+                      context.favourite_exists = false
     else
       user.favourites.create(ad: ad)
       context.favourite_exists = true

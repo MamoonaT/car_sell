@@ -1,4 +1,4 @@
-<ul id="progressbar">
+<ul id="progressbar" class= "mt-5 mb-5">
   <li class="active" id="detail"><strong>Details</strong></li>
   <li id="image" class = "<%= params[:id] == "picture" || params[:id] == "contact"  ? "active" : "" %>"><strong>Images</strong></li>
   <li id="contact" class = "<%= params[:id] == "contact" ? "active" : "" %>"><strong>Contact</strong></li>
@@ -14,6 +14,7 @@
 
 #progressbar .active {
   color: #32a5f1;
+  z-index: 67
 }
 
 #progressbar li {

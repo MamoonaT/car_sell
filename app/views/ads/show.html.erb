@@ -1,8 +1,8 @@
-<div class="container-fluid w-75 h-100 mt-5 p-10 text-right border bg-light ">
-	<div class="container text-center">
+ <div class="container-fluid w-75 h-100 mt-5 p-10 text-right border bg-light ">
+	<div class="container text-center mb-3">
  		<div class="row">
-			<div class="col">
-				<p> City </p>
+			<div class="mb-3">
+  			<label for="exampleFormControlInput1" class="form-label">City</label>
 				<%= @ad.city %>
 			</div>
 			<div class="col">
@@ -60,7 +60,7 @@
 			<%= link_to favourite_text, favourite_path(ad: @ad), method: 'put', id: 'favourite_link', remote: true %>
 		</button>
 		<button type="button" class="btn btn-outline-dark">
-			<%= link_to "Edit Ad", edit_ad_ad_step_path(ad_id: @ad.id) if user_signed_in?%>
+			<%= link_to "Edit Ad", edit_ad_path(ad_id: @ad.id) if user_signed_in?%>
 		</button>
 		<button type="button" class="btn btn-outline-danger">
 			<%= link_to "Delete Ad", ad_path(@ad), method: :delete, data:{ confirm: "Are you sure?" } %>
@@ -72,4 +72,7 @@
 		</td>
 		</button>
 	</div>
-</div>
+
+
+
+	

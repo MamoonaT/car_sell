@@ -14,7 +14,7 @@
 			<%= f.file_field :images, class: "form-control", multiple: true %>
 			<img id="img_prev" />
 			<%= f.submit "Next" %>
-			<%= link_to "Back", ads_path, method: :post %>	
+			<%= link_to "Back", ads_path(id: @ad_id), method: :post %>	
 			<% end %>
 		</div>
 	<div>

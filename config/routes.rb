@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/new'
   get 'home/search', to: 'home#search'
-  resources :ads, only: [:new, :create, :index, :destroy, :show] do 
+  resources :ads
+  resources :ads, only: [:new, :create, :index, :destroy, :show] do
     resources :ad_steps, controller: 'ad_steps'
   end
   resources :favourites
