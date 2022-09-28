@@ -5,17 +5,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
-gem 'rubocop'
-gem 'rubocop-rails'
-
 gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
 gem 'interactor-rails', '~> 2.0'
 gem 'jquery-rails'
+gem 'jwt'
 gem 'kaminari'
 gem 'pg_search'
 gem 'phonelib'
 gem 'pundit'
+gem 'rubocop'
+gem 'rubocop-rails'
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 gem 'stripe'
 gem 'wicked', '~> 1.3', '>= 1.3.2'

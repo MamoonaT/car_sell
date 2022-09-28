@@ -1,7 +1,7 @@
-class AdsController < ApplicationController
+class Api::AdsController < Api::ApplicationController
   before_action :find_ad, only: [:show, :edit, :update, :destroy]
   before_action :authorization, only: [:edit, :update, :destroy]
-
+  before_action :authenticate_user!
   def index
     @ads = Ad.all.page(params[:page])
   end

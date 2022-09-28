@@ -12,4 +12,3 @@ class CheckoutController < ApplicationController
     @ad = Ad.find(params[:id])
   end
 end
-
