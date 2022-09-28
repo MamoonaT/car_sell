@@ -1,5 +1,5 @@
 class Api::ApplicationController < ActionController::API
-	before_action :set_default_format
+  before_action :set_default_format
 
   protected
 

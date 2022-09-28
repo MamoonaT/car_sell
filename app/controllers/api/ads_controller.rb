@@ -1,6 +1,5 @@
 class Api::AdsController < Api::ApplicationController
   before_action :find_ad, only: [:show, :edit, :update, :destroy]
-  before_action :authorization, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
   def index
     @ads = Ad.all.page(params[:page])
@@ -23,11 +22,7 @@ class Api::AdsController < Api::ApplicationController
   def edit; end
 
   def update
-    if @ad.update(ad_params)
-      redirect_to ad_path
-    else
-      render :edit, alert: 'You are not authorized'
-    end
+    @ad.update(ad_params)
   end
 
   def show
@@ -36,14 +31,9 @@ class Api::AdsController < Api::ApplicationController
 
   def destroy
     @ad.destroy
-    redirect_to ads_path
   end
 
   private
-
-  def authorization
-    authorize @ad
-  end
 
   def find_ad
     @ad = Ad.find(params[:id])
