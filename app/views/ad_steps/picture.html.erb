@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container-fluid w-75 text-center border rounded shadow mt-2 mb-5 p-4 bg-light ">
 	<%= render 'progress-bar'%>
   <div class="row">
     <div class="col">
@@ -13,8 +13,8 @@
 			<%= f.hidden_field :ad_id, value: @ad.id %>
 			<%= f.file_field :images, class: "form-control", multiple: true %>
 			<img id="img_prev" />
-			<%= f.submit "Next" %>
-			<%= link_to "Back", ads_path(id: @ad_id), method: :post %>	
+    		  <%= f.submit "next", class: 'btn btn-primary' %>
+					<%= link_to "Back", ads_path(id: @ad_id), method: :post, class: "btn btn-basic" %>	
 			<% end %>
 		</div>
 	<div>

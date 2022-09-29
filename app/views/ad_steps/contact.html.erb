@@ -1,5 +1,8 @@
-<div class="container-fluid w-50 text-center border rounded shadow mt-5 mb-5 p-4 bg-light ">
-  <%= render 'progress-bar'%>
+<div class="container-fluid w-50 text-center border rounded shadow mt-1 mb-1 p-4 bg-light ">
+	<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+		<%= link_to "Get featured", checkout_create_path(id: @ad.id), class: "btn btn-outline-warning btn-sm fw-bold fst-italic mb-3 mt-5 btn-lg #{params[:checkout_succeeded] ? "disabled": ""} pull-right", method: :post, remote: true %>
+	</div>
+	<%= render 'progress-bar'%>
 	<%= form_for @ad, url: wizard_path, method: "PUT" do |f| %>
 		<%= f.hidden_field :ad_id, value: @ad.id %>
       <% if f.object.errors.any? %>
@@ -11,21 +14,21 @@
       <% end %>			
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md">
 					  <%= f.label :Primary_Contact %>
 				   	<%= f.text_field :primary_contact,  placeholder: '+923xxxxxxxxx', class: "form-control #{'is-invalid' if 'invalid'}" %>
 					</div>
-					<div class="col-md-6">
+				</div>
+				<div class="row">
+					<div class="col-md">
 					  <%= f.label :Secondary_Contact %>
 				   	<%= f.text_field :secondary_contact,  placeholder: '+923xxxxxxxxx', class: "form-control #{'is-invalid' if 'invalid'}" %>
 					</div>
 				</div>
 			</div>
-			
-		<%= f.submit 'Create' %>
-		<%= link_to "Back", previous_wizard_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?"} %>
+			<div class="d-grid gap-2 col-6 mx-auto mt-2">
+				<%= f.submit 'Create' , class: "btn btn-outline-basic" %>
+				<%= link_to "Back", previous_wizard_path(ad_id: @ad.id), data:{ confirm: "Your data will be lost if you want to proceed back! Are you sure?"}, class: "btn btn-basic" %>
+			</div>
 	<% end %>
-	<div>
-		<%= link_to "Get featured", checkout_create_path(id: @ad.id), class: "btn btn-outline-warning fw-bold fst-italic mb-3 mt-5 btn-lg #{params[:checkout_succeeded] ? "disabled": ""}", method: :post, remote: true %>
-	</div>
 </div>
