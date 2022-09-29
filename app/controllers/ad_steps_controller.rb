@@ -1,6 +1,6 @@
 class AdStepsController < ApplicationController
   include Wicked::Wizard
-  steps *Ad.form_steps
+  steps(*Ad.form_steps)
   before_action :find_ad, only: [:show, :update]
 
   def show
@@ -30,19 +30,18 @@ class AdStepsController < ApplicationController
   def ad_id
     params[:ad].present? ? params[:ad][:ad_id] : params[:ad_id]
   end
-  
+
   def ad_params(step)
     permitted_attributes = case step
-                           when "details"
+                           when 'details'
                              [:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type,
                               :engine_capacity, :add_description, :assembly_type]
-                           when "picture"
+                           when 'picture'
                              [images: []]
-                           when "contact"
+                           when 'contact'
                              [:primary_contact, :secondary_contact]
                            end
 
     params.require(:ad).permit(permitted_attributes).merge(form_step: step)
-    end
-
+  end
 end
